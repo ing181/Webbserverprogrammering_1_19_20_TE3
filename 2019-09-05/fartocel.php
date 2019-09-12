@@ -17,15 +17,12 @@
 
 	   </form>
        <?php
-
          if($_GET['val']=="tofahrenheit")
          {
            $invarde=$_GET['invarde']; // Tomt innan formuläret skickats
            $fahrenheit = $invarde*9/5+32;
            $fahrenheit = number_format($fahrenheit, 2,",","");
            echo $invarde." Celsius = ".$fahrenheit." Fahrenheit";
-
-
          }
          else{
            $invarde=$_GET['invarde']; // Tomt innan formuläret skickats
@@ -33,9 +30,6 @@
            $celsius = number_format($celsius, 2,",","");
            echo $invarde." Fahrenheit = ".$celsius." Celsius";
          }
-
-
-
        ?>
 
 
