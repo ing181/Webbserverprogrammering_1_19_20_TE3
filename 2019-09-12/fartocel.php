@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="sv">
    <head>
@@ -5,7 +8,11 @@
       <title>PHP</title>
    </head>
    <body>
-   <form action="till.php" method="post">
+     <?php
+          $_SESSION['inloggad'] = "sant";
+      ?>
+   <form action="till.php" method="get">
+     <input type="hidden" name="test" value="hej">
      <input type="text" name="gradtal" class="gradtal">
      <select name="val">
        <option value="to_celsius">Från Fahrenheit till Celsius</option>

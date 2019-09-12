@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="sv">
    <head>
@@ -6,12 +9,20 @@
    </head>
    <body>
    <?php
-   $val = $_POST['val'];
-   $gradtal = $_POST['gradtal'];
+   if ($_SESSION['inloggad'] != "sant")
+   {
+      echo "Du är inte behörig";
+      exit;
+
+   }
+
+   echo $_GET['test']."<br>";
+   $val = $_GET['val'];
+   $gradtal = $_GET['gradtal'];
    if ($val == "to_celsius")
    {
         $celsius = ($gradtal-32) * 5 / 9;
-        echo $gradtal." Fahrenheit motsvaras av ".$celsius." Celsius";
+        echo $gradtal." Fahrenheit motsvaras av ".number_format($celsius,2,",","")." Celsius";
 
    }
    else if ($val == "to_fahrenheit")
